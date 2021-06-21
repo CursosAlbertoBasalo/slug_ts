@@ -1,6 +1,6 @@
 {
   "name": "slug_ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Slug generator for url or human friendly ids written as a tutorial for TypeScript clean and tested code",
   "author": {
     "name": "Alberto Basalo",
