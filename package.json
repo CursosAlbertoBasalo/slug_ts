@@ -21,7 +21,7 @@
     "test": "jest",
     "build": "tsc -p tsconfig.json",
     "dev": "ts-node ./src/main.ts",
-    "test:dev": "jest --watch",
+    "test:dev": "jest --watch --verbose",
     "test:coverage": "jest --coverage",
     "ts-node": "ts-node",
     "format": "prettier --write \"./**/*.{ts,json}\"",
