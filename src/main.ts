@@ -6,5 +6,5 @@ function sayHello(yourName: string): void {
 function sum(a: number, b: number): number {
   return a + b;
 }
-const myName = 'Quark';
+const myName = "Quark";
 sayHello(myName);
