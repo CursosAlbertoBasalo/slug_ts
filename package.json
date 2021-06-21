@@ -1,0 +1,72 @@
+{
+  "name": "quark",
+  "version": "1.6.0",
+  "description": "Fundamental project template",
+  "author": {
+    "name": "Alberto Basalo",
+    "email": "albertobasalo@hotmail.com",
+    "url": "https://twitter.com/albertobasalo"
+  },
+  "homepage": "https://github.com/AtomicBuilders/quark#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtomicBuilders/quark.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AtomicBuilders/quark/issues"
+  },
+  "scripts": {
+    "start": "node ./dist/main.js",
+    "test": "jest",
+    "build": "tsc -p tsconfig.json",
+    "dev": "ts-node ./src/main.ts",
+    "test:dev": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "ts-node": "ts-node",
+    "format": "prettier --write \"./**/*.{ts,json}\"",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "prerelease": "standard-version ",
+    "release": "git push --follow-tags origin main",
+    "update": "ncu -u"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.4",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.4",
+    "npm-check-updates": "^11.7.1",
+    "prettier": "^2.3.1",
+    "standard-version": "^9.3.0",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.0.0"
+  },
+  "dependencies": {
+    "typescript": "^4.3.4"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "moduleNameMapper": {
+      "@ab/(.*)": "<rootDir>/src/$1"
+    },
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist/"
+    ],
+    "verbose": false,
+    "collectCoverage": false,
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
+  }
+}
