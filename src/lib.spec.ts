@@ -1,4 +1,4 @@
-import { getSlug, slugOptions } from "./lib";
+import { getSlug, remove, replace, slugOptions } from "./lib";
 describe("GIVEN: the getSlug function used without options and a string source", () => {
   it("WHEN has spaces THEN should be replaced with a hyphen", () => {
     const input = "3 concepts you need to get started";
@@ -84,5 +84,24 @@ describe("GIVEN: the getSlug function used with options", () => {
     expect(actual.startsWith(expected)).toBeTruthy();
     expect(actual.length - expected.length).toStrictEqual(13);
     expect(actual).toHaveLength(30 + 1 + 13);
+  });
+});
+
+describe("GIVEN the replace function", () => {
+  it("WHEN gets a $ THEN returns dollars", () => {
+    const input = "Bitcoins drops under 50000$";
+    const actual = replace(input, "$", "dollars");
+    const expected = "Bitcoins drops under 50000dollars";
+    expect(actual).toStrictEqual(expected);
+  });
+});
+
+describe("GIVEN the remove function", () => {
+  it("WHEN gets an array of targets $ THEN returns without them", () => {
+    const input = "Learn JavaScript, Testing, Async/Await & more following @albertobasalo";
+    const inputTargets = ["’", "!", "?", ",", ":", ".", "#", "+", "/", "&", "@"];
+    const actual = remove(input, inputTargets);
+    const expected = "Learn JavaScript Testing AsyncAwait  more following albertobasalo";
+    expect(actual).toStrictEqual(expected);
   });
 });
